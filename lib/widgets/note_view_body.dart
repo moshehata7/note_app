@@ -6,11 +6,10 @@ class NoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NoteItem();
-    // ListView.builder(
-    //   itemBuilder: (context, index) {
-    //     return NoteItem();
-    //   },
-    // );
+    return ListView.builder(
+        itemBuilder: (context, index) {
+          return NoteItem();
+        },
+      );
   }
 }

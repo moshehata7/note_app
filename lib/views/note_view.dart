@@ -9,11 +9,7 @@ class NoteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Notes"), actions: [CustomSearchIcon()]),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return NoteViewBody();
-        },
-      ),
+      body:NoteViewBody() 
     );
   }
 }
