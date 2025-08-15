@@ -8,7 +8,7 @@ class EditNoteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Edit Note"),
-       actions: [CustomSearchIcon()]),
+       actions: [CustomIcon(icon: Icons.check,)]),
   body: EditNoteBody()
     );
   }
