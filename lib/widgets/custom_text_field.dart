@@ -13,7 +13,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16, left: 32, right: 32),
+      padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
       child: TextField(
         maxLines: maxLines,
         decoration: InputDecoration(
