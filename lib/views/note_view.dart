@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/custom_search_icon.dart';
-import 'package:note_app/widgets/note_bottom_sheet.dart';
+import 'package:note_app/widgets/add_note_bottom_sheet.dart';
 import 'package:note_app/widgets/note_view_body.dart';
 
 class NoteView extends StatelessWidget {
