@@ -29,7 +29,7 @@ class _NoteViewBodyState extends State<NoteViewBody> {
             child: ListView.builder(
               itemCount: notes.length,
               itemBuilder: (context, index) {
-                return NoteItem(noteModel: notes[index]);
+                return NoteItem(note: notes[index]);
               },
             ),
           );

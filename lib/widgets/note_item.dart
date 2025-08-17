@@ -4,14 +4,12 @@ import 'package:note_app/views/edit_note_view.dart';
 import 'package:intl/intl.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key, required this.noteModel});
-  final NoteModel  noteModel;
-
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
-    final date = DateTime.parse(noteModel.date);
+    final date = DateTime.parse(note.date);
     final formattedDate = DateFormat('EEEE, MMM d').format(date);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
@@ -29,42 +27,48 @@ class NoteItem extends StatelessWidget {
         child: Container(
           height: 200,
           decoration: BoxDecoration(
-            color: Colors.amber,
+            color: Color(note.color),
             borderRadius: BorderRadius.circular(12),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              ListTile(
-                contentPadding: EdgeInsets.only(left: 32, top: 16),
-                title: Text(
-                  noteModel.title ,
-                  style: TextStyle(fontSize: 35, color: Colors.black),
-                ),
-                subtitle: Text(
-                  noteModel.subtitle,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black.withOpacity(0.7),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                ListTile(
+                  contentPadding: EdgeInsets.only(left: 32, top: 16),
+                  title: Text(
+                    note.title,
+                    style: TextStyle(fontSize: 35, color: Colors.black),
+                  ),
+                  subtitle: Text(
+                    maxLines: 2,
+                    note.subtitle,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black.withOpacity(0.7),
+                    ),
+                  ),
+                  trailing: IconButton(
+                    onPressed: () {
+                      note.delete();
+                      
+                    },
+                    icon: Icon(Icons.delete, color: Colors.black, size: 35),
                   ),
                 ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.delete, color: Colors.black, size: 35),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(32),
-                child: Text(
-                  formattedDate,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black.withOpacity(.8),
+                Padding(
+                  padding: const EdgeInsets.all(32),
+                  child: Text(
+                    formattedDate,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black.withOpacity(.8),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
