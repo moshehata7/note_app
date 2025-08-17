@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key, required this.color});
-  final Color color;
+  const NoteItem({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class NoteItem extends StatelessWidget {
         child: Container(
           height: 200,
           decoration: BoxDecoration(
-            color: color,
+            color: Colors.amber,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(

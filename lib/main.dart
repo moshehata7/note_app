@@ -23,8 +23,6 @@ class NoteApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AddNoteCubit(),
-          
-          
         ),
         BlocProvider(
           create: (context) => NotesCubit(),
