@@ -6,7 +6,7 @@ sealed class NotesState {}
 final class NotesInitial extends NotesState {}
 
 final class NotesSuccess extends NotesState {
-  List<NoteModel> notes;
+  final List<NoteModel> notes;
   NotesSuccess(this.notes);
 }
 

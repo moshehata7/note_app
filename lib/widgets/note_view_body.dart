@@ -22,15 +22,20 @@ class _NoteViewBodyState extends State<NoteViewBody> {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListView.builder(
-            itemCount: state is NotesSuccess ? state.notes.length : 0,
-            itemBuilder: (context, index) {
-              return NoteItem();
-            },
-          ),
-        );
+        if (state is NotesSuccess) {
+          final notes = state.notes;
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView.builder(
+              itemCount: notes.length,
+              itemBuilder: (context, index) {
+                return NoteItem(noteModel: notes[index]);
+              },
+            ),
+          );
+        } else {
+          return const Center(child: Text("No notes yet..."));
+        }
       },
     );
   }
