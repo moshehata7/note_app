@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/widgets/colors_list_view.dart';
 import 'package:note_app/widgets/custom_add_button.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
@@ -36,8 +37,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
             maxLines: 7,
-            hintText: "subTitle",
+            hintText: "Content",
           ),
+          SizedBox(
+            height: 10,
+          ),
+          ColorListView(),
           SizedBox(height: 50),
           CustomAddButton(
             onTap: () {

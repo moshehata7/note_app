@@ -22,7 +22,7 @@ class NoteView extends StatelessWidget {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(title: Text("Notes"), 
-      actions: [CustomIcon(icon: Icons.search,)]),
+      ),
       body: NoteViewBody(),
     );
   }
