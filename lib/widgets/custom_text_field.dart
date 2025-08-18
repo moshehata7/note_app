@@ -6,17 +6,19 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.maxLines,
-    this.onSaved,
+    this.onSaved, this.onChanged,
   });
   final String hintText;
   final int maxLines;
   final void Function(String?)? onSaved;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
       child: TextFormField(
+        onChanged: onChanged,
         onSaved: onSaved,
         validator: (value) {
           if (value?.isEmpty ?? true) {
